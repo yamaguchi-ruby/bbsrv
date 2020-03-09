@@ -1,4 +1,8 @@
 {
     "root": "./site/",
-    "port": 80
+    "port": 443,
+    "ssl": "true",
+    "crt_file_name": "/etc/letsencrypt/live/www.yamaguchi.tech/cert.pem",
+    "rsa_file_name": "/etc/letsencrypt/live/www.yamaguchi.tech/privkey.pem",
+    "main_site": "https://yamaguchi-ruby.github.io"
 }

@@ -7,6 +7,10 @@
 
 ```sh
 sudo apt install libsqlite3-dev
+```
+
+```rb
+# Gemfile
 gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 ```
 
@@ -15,4 +19,3 @@ gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 ```sh
 sudo `which ruby` server.rb
 ```
-

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>テストページ</title>
+    </head>
+    <body>
+        <script>
+            let r = new XMLHttpRequest
+            r.open("GET", "/cgi-bin/get_poster.cgi")
+            r.send()
+            let posters
+            r.onload = function(e){
+                let posters_csv = e.target.response
+                posters = posters_csv.split(/\n/)
+                posters = posters.filter(Boolean)
+                posters = posters.map(function(e){
+                    return e.split(/\,\s?/)
+                })
+            }
+        </script>
+    </body>
+
+</html>
