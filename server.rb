@@ -8,8 +8,7 @@ srv = WEBrick::HTTPServer.new({
     :Port => settings["port"],
     :SSLEnable => (settings["ssl"] == "true"),
     :SSLCertificate => OpenSSL::X509::Certificate.new(open(settings["crt_file_name"]).read),
-    :SSLPrivateKey => OpenSSL::PKey::RSA.new(open(settings["rsa_file_name"]).read),
-    :RequestCallback => Proc.new{ |req,res| res['Access-Control-Allow-Origin'] = settings["main_site"] }
+    :SSLPrivateKey => OpenSSL::PKey::RSA.new(open(settings["rsa_file_name"]).read)
 })
 
 Dir.glob("*.cgi").each do |cgi|
