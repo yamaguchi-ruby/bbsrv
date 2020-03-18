@@ -19,6 +19,10 @@ if cgi.params["text"] == [""]
 end
 
 cgi.params["text"][0].gsub!(/\r\n/, "<br>")
+cgi.params["name"][0].gsub!(/\r\n/, "")
+cgi.params["text"][0].gsub!(/\,/, "&#44;")
+cgi.params["name"][0].gsub!(/\,/, "&#44;")
+
 text = Base64.encode64(cgi.params["text"][0])
 name = Base64.encode64(cgi.params["name"][0])
 
